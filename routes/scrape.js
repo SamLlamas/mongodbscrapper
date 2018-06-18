@@ -9,7 +9,7 @@ const express = require('express'),
 router.get("/newArticles", function(req, res) {
   //configuring options object for request-promist
   const options = {
-    uri: 'https://www.nytimes.com/section/us',
+    uri: 'http://blog.counter-strike.net/index.php/category/updates/',
     transform: function (body) {
         return cheerio.load(body);
     }
@@ -26,13 +26,12 @@ router.get("/newArticles", function(req, res) {
         .then(function ($) {
           let newArticleArr = [];
           //iterating over returned articles, and creating a newArticle object from the data
-          $('#latest-panel article.story.theme-summary').each((i, element) => {
+          $('.inner_post').each((i, element) => {
             let newArticle = new db.Article({
-              storyUrl: $(element).find('.story-body>.story-link').attr('href'),
-              headline: $(element).find('h2.headline').text().trim(),
-              summary : $(element).find('p.summary').text().trim(),
+              storyUrl: $(element).find('h2>a').attr('href'),
+              headline: $(element).find('a').text().trim(),
               imgUrl  : $(element).find('img').attr('src'),
-              byLine  : $(element).find('p.byline').text().trim()
+              summary : $(element).find('p').html()
             });
             //checking to make sure newArticle contains a storyUrl
             if (newArticle.storyUrl) {

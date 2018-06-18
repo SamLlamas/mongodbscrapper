@@ -1,6 +1,6 @@
 
 <header class="header">
-  <h1 id="neon">[ WEB-SCRAPER ]</h1>
+  <h1 id="neon">Counter Strike: Patch Notes</h1>
   <nav class="button-group">
     <button class="button-dark" id="scrape" data-toggle="modal" data-target="#alertModal">Scrape New Articles</button>
     <a href="/articles/viewSaved"><button class="button-dark" id="viewSaved">View Saved Articles</button></a>
@@ -23,8 +23,7 @@
       {{else}}
         <h3 class="storyHeadline">{{headline}}</h3>
       {{/if}}
-      <h5 class="storyByline">{{byLine}}</h5>
-      <h6 class="storySummary">{{summary}}</h6>
+      <p class="storySummary">{{summary}}</p>
       <button class="storyButton" id="saveArticle" data-id="{{_id}}">Save Article</button>
     </figure>
   {{/unless}}

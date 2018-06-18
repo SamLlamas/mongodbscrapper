@@ -35,9 +35,8 @@ button:focus {
 
 
 .header {
-  background-image: url('../img/nyt-header.png');
+  background-image: url('http://media.steampowered.com/apps/csgo/blog/images/camo_bg2.jpg?v=1002');
   background-color: #181818;
-  background-size: 40% 40%;
   background-repeat: no-repeat;
   background-position: center 35%;
   position: fixed;
@@ -52,18 +51,19 @@ button:focus {
   color: white;
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 35%;
 	-webkit-transform: translate(-50%, 20%);
 	        transform: translate(-50%, 20%);
 	font-size: 7em;
 	margin: 0;
 	padding: 0 20px;
 	font-family: 'Quicksand', sans-serif;
-	text-shadow: 0 0 20px #ff005b;
+  text-shadow: 0 0 20px #ff005b;
+  text-align: center;
 }
 
 #neon:after {
-	content: '[ WEB-SCRAPER ]';
+	content: 'Counter Strike: Patch Notes';
 	color: #ff005b;
 	position: absolute;
 	padding: 0 20px;
